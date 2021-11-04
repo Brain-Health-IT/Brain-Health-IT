@@ -5,9 +5,14 @@ import 'appcolors.dart';
 
 class TextStyles {
   static final titleRegular = GoogleFonts.lexendDeca(
-    fontSize: 20,
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    color: Colors.black,
+  );
+  static final body = GoogleFonts.lexendDeca(
+    fontSize: 15,
     fontWeight: FontWeight.w400,
-    color: AppColors.background,
+    color: Colors.black,
   );
 
   static final titleBoldBackground = GoogleFonts.lexendDeca(
@@ -16,7 +21,7 @@ class TextStyles {
     color: AppColors.green,
   );
   static final titleBold = GoogleFonts.inter(
-    fontSize: 20,
+    fontSize: 19,
     fontWeight: FontWeight.w800,
     color: Colors.black,
   );

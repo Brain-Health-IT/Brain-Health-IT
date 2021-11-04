@@ -13,7 +13,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, //Tirar a barra de debug.
-      title: 'Flutter Demo',
+      title: 'Brain Health I.T',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

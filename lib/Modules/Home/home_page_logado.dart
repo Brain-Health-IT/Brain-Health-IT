@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:saude_mental_ti/Shared/AppBar/app_bar.dart';
 import 'package:saude_mental_ti/Shared/Buttons/circle_button_widget.dart';
-import 'package:saude_mental_ti/Shared/Themes/app_text_styles.dart';
-import 'package:saude_mental_ti/Shared/Themes/appcolors.dart';
+import 'package:saude_mental_ti/Shared/CardPosts/ultimos_posts.dart';
+import 'package:saude_mental_ti/Shared/CardPosts/ultimas_forum.dart';
 
 class HomePageLogado extends StatefulWidget {
   const HomePageLogado({Key? key}) : super(key: key);
@@ -17,8 +17,6 @@ class HomePageLogado extends StatefulWidget {
 class _HomePageState extends State<HomePageLogado> {
   @override
   Widget build(BuildContext context) {
-    double heightScreen = MediaQuery.of(context).size.height;
-    double widthScreen = MediaQuery.of(context).size.width;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -58,170 +56,27 @@ class _HomePageState extends State<HomePageLogado> {
                     width: 17,
                   ),
                   CircleButtonWidget(
-                      title: 'Forum',
-                      onPressed: () {},
-                      icon: FontAwesomeIcons.commentDots),
+                      title: 'Sair',
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushReplacementNamed('/homeSLogin');
+                      },
+                      icon: FontAwesomeIcons.signOutAlt),
                 ],
               ),
             ),
-
             //----- Fim Menu -----
 
             //----- Ultimos Posts -----
-
-            Container(
-              height: heightScreen * 0.57,
-              width: widthScreen * 0.95,
-              decoration: BoxDecoration(
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 4.0,
-                    spreadRadius: 0.0,
-                    offset: Offset(2.0, 4.0),
-                  ),
-                ],
-                color: AppColors.shape,
-                borderRadius: BorderRadius.circular(10),
-                border:
-                    Border.fromBorderSide(BorderSide(color: AppColors.confirm)),
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10, bottom: 10),
-                    child: Text(
-                      'Ultimos Posts',
-                      style: TextStyles.titleBold,
-                    ),
-                  ),
-                  Divider(
-                    indent: 20,
-                    endIndent: 20,
-                    thickness: 2,
-                    color: AppColors.confirm,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    height: heightScreen * 0.2,
-                    width: widthScreen * 0.92,
-                    decoration: BoxDecoration(
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 4.0,
-                          spreadRadius: 0.0,
-                          offset: Offset(2.0, 4.0),
-                        ),
-                      ],
-                      color: AppColors.shape,
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.fromBorderSide(
-                          BorderSide(color: AppColors.confirm)),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 17,
-                  ),
-                  Divider(
-                    indent: 20,
-                    endIndent: 20,
-                    thickness: 2,
-                    color: AppColors.confirm,
-                  ),
-                  SizedBox(
-                    height: 17,
-                  ),
-                  Container(
-                    height: heightScreen * 0.2,
-                    width: widthScreen * 0.92,
-                    decoration: BoxDecoration(
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 4.0,
-                          spreadRadius: 0.0,
-                          offset: Offset(2.0, 4.0),
-                        ),
-                      ],
-                      color: AppColors.shape,
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.fromBorderSide(
-                          BorderSide(color: AppColors.confirm)),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            ContainerPrincipal(),
+            //----- Fim Ultimos Posts ------
             SizedBox(
-              height: 20,
+              height: 26,
             ),
-            //----- Cards Ultimos Posts -----
+            //----- Ultimas do Forum -----
+            UltimasForum(),
+            //----- Fim -----
 
-            //----- Card perguntas -----
-            Container(
-              height: heightScreen * 0.31,
-              width: widthScreen * 0.95,
-              decoration: BoxDecoration(
-                boxShadow: const [
-                  BoxShadow(
-                    color: Colors.grey,
-                    blurRadius: 4.0,
-                    spreadRadius: 0.0,
-                    offset: Offset(2.0, 4.0),
-                  ),
-                ],
-                color: AppColors.shape,
-                borderRadius: BorderRadius.circular(10),
-                border: Border.fromBorderSide(
-                  BorderSide(color: AppColors.confirm),
-                ),
-              ),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10, bottom: 10),
-                    child: Text(
-                      'Ultimos Posts',
-                      style: TextStyles.titleBold,
-                    ),
-                  ),
-                  Divider(
-                    indent: 20,
-                    endIndent: 20,
-                    thickness: 2,
-                    color: AppColors.confirm,
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Container(
-                    height: heightScreen * 0.2,
-                    width: widthScreen * 0.92,
-                    decoration: BoxDecoration(
-                      boxShadow: const [
-                        BoxShadow(
-                          color: Colors.grey,
-                          blurRadius: 4.0,
-                          spreadRadius: 0.0,
-                          offset: Offset(2.0, 4.0),
-                        ),
-                      ],
-                      color: AppColors.shape,
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.fromBorderSide(
-                          BorderSide(color: AppColors.confirm)),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 17,
-                  ),
-                ],
-              ),
-            ),
-            //----- Fim Card perguntas -----
             SizedBox(
               height: 15,
             ),
